@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Blog Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+    <meta name="theme-color" content="#563d7c">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="style/bootstrap.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-lg  bg-black bd-navbar ">
+    <div class="row w-100">
+        <div class="col-md-10 col-sm-10 col-10 col-s">
+            <img class="navbar-brand " src="img/logo_nav.png" alt="" height="40" width="110">
+        </div>
+        <div class="">
+            <button class="navbar-toggler border-main" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="collapse navbar-collapse align-self-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-main-color text-right" href="workouts.html">Тренировки<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link text-main-color text-right" href="diets.html">Диеты</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-md-0 text-right">
+            <li>
+                <div class="btn-group" role="group">
+                    <button id="inputTypeEditor" type="button" class="btn btn-secondary dropdown-toggle text-main-color bg-black border-main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Настройки
+                    </button>
+                    <div class="dropdown-menu bg-black text-main-color border-main h-min-drop" aria-labelledby="inputTypeEditor">
+                        <a class="dropdown-item bg-black text-main-color c mt-3" href="workoutEditor.html">Добавить тренировку</a>
+                        <a class="dropdown-item bg-black text-main-color " href="dietsEditor.html">Добавить диету</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle text-main-color bg-black border-main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Олег Андреев
+                    </button>
+                    <div class="dropdown-menu bg-black text-main-color border-main h-min-drop" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item bg-black text-main-color mt-3 " href="profile.html">Профиль</a>
+                        <a class="dropdown-item bg-black text-main-color" href="authorization.html">Выйти</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main role="main" class="col-auto px-md-4 max-width">
+    <div class="row text-main-color text-center">
+        <div class="col border-main-left border-main-xs p-3 ">
+            <h4 class="text-header text-left pb-2">Название программы</h4>
+            <label for="inputName" class="sr-only "></label>
+            <input id="inputName" class="form-control bg-black w-50" required autofocus>
+
+            <h4 class="text-header text-left pt-3">Описание программы</h4>
+            <label for="inputInfo" class="sr-only"></label>
+            <textarea id="inputInfo" class="form-control bg-black mt-3 h-info" required autofocus></textarea>
+
+            <h4 class="text-header text-left pt-3">Тип программы</h4>
+            <label class="mr-sm-2" for="inputType"></label>
+            <select class="custom-select mr-sm-2 w-25 float-left" id="inputType">
+                <option selected>Выбрать</option>
+                <option value="1">На повышение массы</option>
+                <option value="2">На похудение</option>
+            </select>
+
+            <h4 class="text-header text-left pt-4">Сложность программы</h4>
+            <label class="mr-sm-2" for="inputСomplexity"></label>
+            <select class="custom-select mr-sm-2 w-25 float-left" id="inputСomplexity">
+                <option selected>Выбрать</option>
+                <option value="1">Лёгкая</option>
+                <option value="2">Средняя</option>
+                <option value="3">Сложная</option>
+            </select>
+
+            <h4 class="text-header text-left pt-4">Превью</h4>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Выберете изображение</label>
+            </div>
+            <div>
+                <h4 class="text-header text-left pt-3">Упражнение</h4>
+                <h5 class="text-header text-left pt-3">Тип упражнения</h5>
+                <label class="mr-sm-2" for="selectType"></label>
+                <select class="custom-select mr-sm-2 w-25 float-left" id="selectType">
+                    <option selected>Выбрать</option>
+                    <option value="1">Кардио</option>
+                    <option value="2">Динамическое</option>
+                    <option value="3">Статическое</option>
+                </select>
+                <h5 class="text-header text-left pt-4">Описание упражнение</h5>
+                <label for="inputInfoExercise" class="sr-only"></label>
+                <textarea id="inputInfoExercise" class="form-control bg-black mt-3 h-info" required autofocus></textarea>
+
+                <h5 class="text-header text-left pt-3">Количество подходов</h5>
+                <label for="countApproaches" class="sr-only "></label>
+                <input id="countApproaches" class="form-control bg-black w-25" required autofocus>
+
+                <h5 class="text-header text-left pt-3">Количество повторений</h5>
+                <div class="input-group mb-3 w-25">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Подход 1</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Имя пользователя" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3 w-25">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">Подход 2</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Имя пользователя" aria-describedby="basic-addon2">
+                </div>
+                <button type="button" class="btn btn-main float-left">Добавить</button>
+            </div>
+
+        </div>
+        <div class="col border-main-right border-main-xs p-3">
+            <img class="" src="img/logo.png" alt="" width="200" height="200">
+            <h3 class="text-header text-left pt-3 text-center">Программа 1</h3>
+            <ul class="float-left text-left">
+                <li>
+                    <h5>Описание программы</h5>
+                    <p>Это базовая тренировочная программа, предназначенная для того, что бы нарастить общий мышечный
+                        объем.</p>
+                </li>
+                <li>
+                    <h5>Тип программы</h5>
+                    <p>Набор массы</p>
+                </li>
+                <li>
+                    <h5>Сложность программы</h5>
+                    <p>Средняя</p>
+                </li>
+                <li>
+                    <h5>Упражнения</h5>
+                    <ol>
+                        <li>
+                            Жим штанги лежа — это тяжелое базовое упражнение для проработки грудных мышц.
+                            Также оно дополнительно задействует переднюю часть плеча.
+                            Трицепсы в данном упражнении играют роль основных мышц-помощников.
+                        </li>
+                        <h6>Подходы</h6>
+                        <ol>
+                            <li>
+                                10 повторений
+                            </li>
+                            <li>
+                                10 повторений
+                            </li>
+                            <li>
+                                8 повторений
+                            </li>
+                        </ol>
+                        <li>
+                            Подтягивания на перекладине — это многосуставное упражнение для увеличения силы и массы верха спины, бицепсов и мышц кора.
+                            Упражнение часто используют как показатель силы относительно веса собственного тела.
+                        </li>
+                        <h6>Подходы</h6>
+                        <ol>
+                            <li>
+                                10 повторений
+                            </li>
+                            <li>
+                                8 повторений
+                            </li>
+                            <li>
+                                8 повторений
+                            </li>
+                        </ol>
+                        <li>
+                            Подъем штанги на бицепс — это самое узнаваемое упражнение для рук в бодибилдинге и фитнесе.
+                            Позволяет накачать бицепсы, рвущие рукава и брать бо̀̀льшие веса, чем в других вариантах подъемов на бицепс.
+                            Обычно выполняется в среднем или высоком диапазоне повторений,
+                            например 8-12 и более, как часть тренировки рук.
+                        </li>
+                        <h6>Подходы</h6>
+                        <ol>
+                            <li>
+                                8 повторений
+                            </li>
+                            <li>
+                                8 повторений
+                            </li>
+                        </ol>
+
+                    </ol>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

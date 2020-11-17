@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: black;
+}
+
+.flex-md-row {
+    flex-direction: row
+}
+
+.bg-main-color {
+    background-color: #36d88e;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.text-main-color {
+    color: #36d88e;
+}
+
+.border-main {
+    border: 4px solid #36d88e;
+    border-radius: 30px;
+}
+
+.border-img {
+    border-radius: 30px;
+}
+
+@media (min-width: 450px){
+    .border-main-left {
+        border-left: 4px solid #36d88e;
+        border-top: 4px solid #36d88e;
+        border-bottom: 4px solid #36d88e;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .border-main-right {
+        border: 4px solid #36d88e;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}
+
+
+.h-min-drop {
+    min-height: 120px;
+}
+
+
+.form-input {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    border: 4px solid #36d88e;
+    border-radius: .9rem;
+    background-color: black;
+}
+
+.h-info {
+    height: 300px;
+}
+
+.text-main-color {
+    color: #36d88e;
+}
+
+a {
+    color: black;
+    font-family: Consolas, serif;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.border-drop-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+
+.sub {
+    min-height: 500px;
+}
+
+.profile {
+    width: 300px;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+
+@media (max-width: 450px) {
+    .border-main-xs {
+        border: 4px solid #36d88e;
+        border-radius: 30px;
+    }
+
+    .col-md105 {
+        flex: 0 0 88%;
+        max-width: 88%;
+    }
+
+    .max-width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 405px) {
+    .col-s {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <title>Blog Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+    <meta name="theme-color" content="#563d7c">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="style/bootstrap.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-lg  bg-black bd-navbar ">
+    <div class="row w-100">
+        <div class="col-md-10 col-sm-10 col-10 col-s">
+            <img class="navbar-brand " src="img/logo_nav.png" alt="" height="40" width="110">
+        </div>
+        <div class="">
+            <button class="navbar-toggler border-main" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="collapse navbar-collapse align-self-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-main-color text-right" href="workouts.html">Тренировки<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link text-main-color text-right" href="diets.html">Диеты</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-md-0 text-right">
+            <li>
+                <div class="btn-group" role="group">
+                    <button id="inputTypeEditor" type="button" class="btn btn-secondary dropdown-toggle text-main-color bg-black border-main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Настройки
+                    </button>
+                    <div class="dropdown-menu bg-black text-main-color border-main h-min-drop" aria-labelledby="inputTypeEditor">
+                        <a class="dropdown-item bg-black text-main-color c mt-3" href="workoutEditor.html">Добавить тренировку</a>
+                        <a class="dropdown-item bg-black text-main-color " href="dietsEditor.html">Добавить диету</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle text-main-color bg-black border-main" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Олег Андреев
+                    </button>
+                    <div class="dropdown-menu bg-black text-main-color border-main h-min-drop" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item bg-black text-main-color mt-3 " href="profile.html">Профиль</a>
+                        <a class="dropdown-item bg-black text-main-color" href="authorization.html">Выйти</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main role="main" class="col-auto px-md-4 max-width">
+    <div class="row text-main-color text-center">
+        <div class="col-md border-main-left p-3">
+            <h4 class="text-header text-left pb-2">Название диеты</h4>
+            <label for="inputName" class="sr-only "></label>
+            <input id="inputName" class="form-control bg-black w-50" required autofocus>
+
+            <h4 class="text-header text-left pt-3">Описание диеты</h4>
+            <label for="inputInfo" class="sr-only"></label>
+            <textarea id="inputInfo" class="form-control bg-black mt-3 h-info" required autofocus></textarea>
+
+            <h4 class="text-header text-left pt-3">Тип диеты</h4>
+            <label class="mr-sm-2" for="inputType"></label>
+            <select class="custom-select mr-sm-2 w-25 float-left" id="inputType">
+                <option selected>Выбрать</option>
+                <option value="1">На повышение массы</option>
+                <option value="2">На похудение</option>
+            </select>
+
+            <h4 class="text-header text-left pt-4">Превью</h4>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Выберете изображение</label>
+            </div>
+            <h4 class="text-header text-left pt-4">Приём пищи</h4>
+            <label class="mr-sm-2" for="inputСomplexity"></label>
+            <select class="custom-select mr-sm-2 w-25 float-left" id="inputСomplexity">
+                <option selected>Выбрать</option>
+                <option value="1">Завтрак</option>
+                <option value="2">Воторой завтрак</option>
+                <option value="3">Обед</option>
+                <option value="4">Ужин</option>
+            </select>
+
+            <h5 class="text-header text-left pt-4">Описание</h5>
+            <label for="inputInfoExercise" class="sr-only"></label>
+            <textarea id="inputInfoExercise" class="form-control bg-black mt-3 h-info" required autofocus></textarea>
+            <button type="button" class="btn btn-main float-left mt-3">Добавить</button>
+
+        </div>
+        <div class="col-md border-main-right p-3">
+            <img class="border-img" src="img/vegetables.png" alt="" width="180" height="180">
+            <h3 class="text-header text-left pt-3 text-center">Белковая диета</h3>
+            <ul class="float-left text-left">
+                <li>
+                    <h5>Описание диеты</h5>
+                    <p> Белковая диета подойдёт, если деятельность человека сопровождается значительными
+                        нагрузками на мышцы или занятиями физкультурой и спортом. Данная диета ускоряет метаболизм,
+                        повышает массу мышц и улучшает их структуру (выводя жировые отложения и воду), помогает
+                        организму восстановиться после больших нагрузок, нормализовать вес. Поэтому такая диета для
+                        спортсменов рекомендует включать в полтора-два раза больше белка (до 5 гр. на 1 кг веса в день),
+                        чем рацион обычного человека.</p>
+                </li>
+                <li>
+                    <h5>Тип диеты</h5>
+                    <p>Набор массы</p>
+                </li>
+                <li>
+                    <h5>Расписание</h5>
+                    <ol>
+                        <li>
+                            Завтраки
+                        </li>
+                        <ol>
+                            <li>
+                                Персики, творожные продукты, чай.
+                            </li>
+                            <li>
+                                Поджаренный зерновой хлеб, садовые ягоды, сыр твердых сортов, чай, мед.
+                            </li>
+                            <li>
+                                Салат из фруктов, нежирный йогурт.
+                            </li>
+                        </ol>
+                        <li>
+                            Обеды
+                        </li>
+                        <ol>
+                            <li>
+                                Мясо на гриле, пшенная каша, овощной салат, компот.
+                            </li>
+                            <li>
+                                Томатный суп, вареная телятина, салат из капусты, чай.
+                            </li>
+                            <li>
+                                Тушеная куриная грудка, салат из свеклы с сыром.
+                            </li>
+                        </ol>
+                        <li>
+                            Ужины
+                        </li>
+                        <ol>
+                            <li>
+                                Форель на гриле, овощной салат, печеный картофель, томатный сок.
+                            </li>
+                            <li>
+                                Запеченная рыба с зеленым горошком.
+                            </li>
+                        </ol>
+
+                    </ol>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
