@@ -1,15 +1,17 @@
 html,
 body {
     height: 100%;
+}
+
+body {
     display: -ms-flexbox;
-    display: block;
+    /*display: flex;*/
     -ms-flex-align: center;
     align-items: center;
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: black;
+    background-color: #2f2f2f;
 }
-
 
 .form-signin {
     width: 100%;
@@ -91,7 +93,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: #36d88e;
-    background-color: black;
+    background-color: #2f2f2f;
     background-clip: padding-box;
     border: 1px solid #36d88e;
     border-radius: .25rem;
@@ -125,7 +127,7 @@ body {
 }
 
 .btn-primary .flex-md-row{
-    color: black;
+    color:#2f2f2f;
     background-color:#36d88e;
     border-color: #36d88e;
 }
