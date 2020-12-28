@@ -15,34 +15,31 @@
 </template>
 
 <script>
-import Card from "@/components/Card";
-import bootstrap from '@/style/bootstrap.css'
-import styles from '@/style/style.css'
-import url1 from "@/img/vegetables.png";
-import url2 from "@/img/суп.png";
+import Card from "@/components/CardDiets";
+// import bootstrap from '@/style/bootstrap.css'
+// import styles from '@/style/style.css'
+// import url1 from "@/img/vegetables.png";
+// import url2 from "@/img/суп.png";
 export default {
   components: {Card},
   bootstrap,
   styles,
-  data() {
-    return {
-      items: [
-        {
-          title: "Диета на набор массы",
-          description: "Данная диета позволит спотсмену набрать мышечную массу.",
-          url: url1,
-          link: "Перейти к диете"
-
-        },
-        {
-          title: "Диета на похудение",
-          description: "Данная диета отлично способствует снижению\n" +
-              "              веса",
-          url: url2,
-          link: "Перейти к диете"
-        },
-      ]
+  data(){
+    return{
+      items:[]
     }
+  },
+  created() {
+    const access_token = JSON.parse(localStorage.getItem('access_token'));
+
+    this.$http.get('/api/v1/diets/all', {
+      headers: {
+        'Authorization': 'Bearer ' + access_token,
+      }, baseURL: 'http://localhost:8090/',
+    })
+        .then((response) => {
+          this.items = response.data
+        })
   }
 }
 

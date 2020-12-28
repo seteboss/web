@@ -16,51 +16,35 @@
 
 <script>
 import Card from "@/components/Card";
-import url1 from "@/img/hand.png"
-import url2 from "@/img/бонус.png"
-import url3 from "@/img/скакалка.png"
-import url4 from "@/img/секундомер.png"
+// import url1 from "@/img/hand.png"
+// import url2 from "@/img/бонус.png"
+// import url3 from "@/img/скакалка.png"
+// import url4 from "@/img/секундомер.png"
 
 export default {
   name: "Workout",
   components: {Card},
   data(){
     return{
-      items:[
-        {
-          title: "Программа на развитие выносливости",
-          description: "Данная программа будет интересна тем, кто хочет\n" +
-              "              себя проверить на прочность.",
-          url: url1,
-          link: "Перейти к программе"
-
-        },
-        {
-          title: "Программа на развитие выносливости 2",
-          description: "Данная программа подойдёт новичкам",
-          url: url2,
-          link: "Перейти к программе"
-
-        },
-        {
-          title: "Программа на набор массы",
-          description: "Данная программа будет интересна тем, кто хочет\n" +
-              "              себя проверить на прочность.",
-          url: url4,
-          link: "Перейти к программе"
-
-        },
-        {
-          title: "Программа на снижение веса",
-          description: "Данная программа позволит сбросить лишний вес.",
-          url: url3,
-        link: "Перейти к программе"
-        }
-      ]
+      items:[]
     }
+  },
+  created() {
+    // const user_id = JSON.parse(localStorage.getItem('user_id'));
+    const access_token = JSON.parse(localStorage.getItem('access_token'));
+
+    this.$http.get('/api/v1/workouts/all', {
+      headers: {
+        'Authorization': 'Bearer ' + access_token,
+      }, baseURL: 'http://localhost:8090/',
+    })
+        .then((response) => {
+          this.items = response.data
+        })
   }
 
 
 }
 
 </script>
+

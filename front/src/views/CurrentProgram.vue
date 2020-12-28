@@ -7,93 +7,85 @@
       </button>
     </div>
     <div class="modal-body text-center">
-      <img class="text-center" src="../img/logo.png" alt="" width="200" height="200">
+      <img class="text-center" src="/img/logo.png" alt="" width="200" height="200">
       <h3 class="text-header text-left pt-3 text-center">Программа 1</h3>
       <ul class="float-left text-left">
         <li>
           <h5>Описание программы</h5>
-          <p>Это базовая тренировочная программа, предназначенная для того, что бы нарастить общий мышечный
-            объем.</p>
+          <p>{{program.info}}</p>
         </li>
         <li>
           <h5>Тип программы</h5>
-          <p>Набор массы</p>
+          <p>{{type}}</p>
         </li>
         <li>
           <h5>Сложность программы</h5>
-          <p>Средняя</p>
+          <p>{{complexity}}</p>
         </li>
         <li>
           <h5>Упражнения</h5>
-          <ol>
-            <li>
-              Жим штанги лежа — это тяжелое базовое упражнение для проработки грудных мышц.
-              Также оно дополнительно задействует переднюю часть плеча.
-              Трицепсы в данном упражнении играют роль основных мышц-помощников.
-            </li>
+          <ol  v-for="exerciseItem in program.exercise" v-bind:key="exerciseItem">
+              {{exerciseItem.info}}
             <h6>Подходы</h6>
-            <ol class="mb-3">
-              <li>
-                10 повторений
-              </li>
-              <li>
-                10 повторений
-              </li>
-              <li>
-                8 повторений
-              </li>
+            <ol class="mb-3" v-for="approachItem in exerciseItem.approach" v-bind:key="approachItem">
+                {{ approachItem.reiterationCount }} Повторений
             </ol>
-            <li>
-              Подтягивания на перекладине — это многосуставное упражнение для увеличения силы и массы верха спины,
-              бицепсов и мышц кора.
-              Упражнение часто используют как показатель силы относительно веса собственного тела.
-            </li>
-            <h6>Подходы</h6>
-            <ol class="mb-3">
-              <li>
-                10 повторений
-              </li>
-              <li>
-                8 повторений
-              </li>
-              <li>
-                8 повторений
-              </li>
-            </ol>
-            <li>
-              Подъем штанги на бицепс — это самое узнаваемое упражнение для рук в бодибилдинге и фитнесе.
-              Позволяет накачать бицепсы, рвущие рукава и брать бо̀̀льшие веса, чем в других вариантах подъемов на
-              бицепс.
-              Обычно выполняется в среднем или высоком диапазоне повторений,
-              например 8-12 и более, как часть тренировки рук.
-            </li>
-            <h6>Подходы</h6>
-            <ol>
-              <li>
-                8 повторений
-              </li>
-              <li>
-                8 повторений
-              </li>
-            </ol>
-
           </ol>
         </li>
       </ul>
     </div>
-    <div class="modal-footer">
-      <router-link class="btn btn-secondary  text-main-color bg-black border-main"  to="/profile" tag="button">Закрыть</router-link>
-    </div>
+<!--    <div class="modal-footer">-->
+<!--      <router-link class="btn btn-secondary  text-main-color bg-black border-main" to="/profile" tag="button">Закрыть-->
+<!--      </router-link>-->
+<!--    </div>-->
   </form>
 </template>
 
 <script>
 import bootstrap from '@/style/bootstrap.css'
 import styles from '@/style/style.css'
+
 export default {
   name: "CurrentProgram",
   styles,
-  bootstrap
+  bootstrap,
+  data(){
+    return{
+      program:[],
+    }
+  },
+  computed: {
+    type () {
+      if (this.program.type === 'WEIGHT_GAIN'){
+        return 'Набор массы'
+      }else {
+        return 'Похудение'
+      }
+    },
+    complexity () {
+      switch (this.program.complexity){
+        case 'EASY': return 'Лёгкая'
+        case 'AVERAGE': return 'Средняя'
+        case 'COMPLICATED': return 'Сложная'
+        default: return '-'
+      }
+    }
+
+  },
+  created() {
+    const access_token = JSON.parse(localStorage.getItem('access_token'));
+
+    this.$http.get('/api/v1/workouts/' + this.$route.params.pId, {
+      headers: {
+        'Authorization': 'Bearer ' + access_token,
+      }, baseURL: 'http://localhost:8090/',
+    })
+        .then((response) => {
+          this.program = response.data
+          console.log(this.program)
+        })
+  }
+
 }
 </script>
 

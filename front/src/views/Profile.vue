@@ -23,7 +23,9 @@
         </button>
       </div>
     </div>
-    <line-chart class="text-main-color"> </line-chart>
+    <div class="history-chart" >
+      <canvas ref="canvas" height="1000px" width="1000px"></canvas>
+    </div>
     <div class="row text-main-color text-center">
       <div class="col-md-4 ">
         <h2>Профиль</h2>
@@ -45,9 +47,13 @@
           <span>185см</span>
         </p>
         <div class="btn-group mr-2">
-          <router-link class="btn btn-sm btn-outline-secondary text-main-color border-main" to="/editUser" tag="button">Редакировать профиль</router-link>
+          <router-link class="btn btn-sm btn-outline-secondary text-main-color border-main" to="/editUser" tag="button">
+            Редакировать профиль
+          </router-link>
 
-          <router-link class="btn btn-sm btn-outline-secondary text-main-color border-main" to="/savingProgress" tag="button">Сохранить прогресс</router-link>
+          <router-link class="btn btn-sm btn-outline-secondary text-main-color border-main" to="/savingProgress"
+                       tag="button">Сохранить прогресс
+          </router-link>
         </div>
         <!-- Modal -->
       </div>
@@ -55,12 +61,16 @@
         <h2>Программа</h2>
         <img class="" src="../img/logo.png" alt="" width="100" height="100">
         <h3>Программа1</h3>
-        <p>Программа 1 предназначена для тренировки мужчин – новичков (жим лежа менее 110-120 кг), подростков
+        <p>
+          Программа 1 предназначена для тренировки мужчин – новичков (жим лежа менее 110-120 кг), подростков
           или девушек которым нужен «акцент на верх тела». Программа подойдет мужчинам у которых слабый мышечный
           корсет спины, «грыжи». Вертикальная нагрузка при выполнении упражнения снижена до минимума, почти нет
-          упражнений стоя.</p>
+          упражнений стоя.
+        </p>
         <div class="btn-group mr-2">
-          <router-link class="btn btn-sm btn-outline-secondary text-main-color border-main" to="/currentProgram" tag="button">Открыть</router-link>
+          <router-link class="btn btn-sm btn-outline-secondary text-main-color border-main" to="/currentProgram"
+                       tag="button">Открыть
+          </router-link>
           <button type="button" class="btn btn-sm btn-outline-secondary text-main-color border-main">Удалить</button>
         </div>
       </div>
@@ -73,7 +83,9 @@
           <span>Для набора массы</span>
         </p>
         <div class="btn-group mr-2">
-          <router-link class="btn btn-sm btn-outline-secondary text-main-color border-main" to="/currentDiet" tag="button">Открыть</router-link>
+          <router-link class="btn btn-sm btn-outline-secondary text-main-color border-main" to="/currentDiet"
+                       tag="button">Открыть
+          </router-link>
           <button type="button" class="btn btn-sm btn-outline-secondary text-main-color border-main">Удалить</button>
         </div>
 
@@ -82,17 +94,49 @@
   </div>
 </template>
 <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/blog/">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
 <script>
 
+import {Line} from 'vue-chartjs'
 
 export default {
+  extends: Line,
+  test : Line,
   data: () => ({
-    linkEditUser:{
+    linkEditUser: {
       url: '/editUser'
-    },
-  })
+    }
+  }),
+  mounted() {
+    this.renderChart({
+      labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      datasets: [
+        {
+          label: 'Вес',
+          borderColor: "#36d88e",
+          // backgroundColor: '#36d88e',
+          data: [77, 80, 83, 85, 85, 83, 85, 88, 90, 91, 90, 92]
+        }
+      ]
+    })
+  },
+  created() {
+    this.renderChart({
+      labels: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      datasets: [
+        {
+          label: 'Вес',
+          borderColor: "#36d88e",
+          // backgroundColor: '#36d88e',
+          data: [77, 80, 83, 85, 85, 83, 85, 88, 90, 91, 90, 92]
+        }
+      ]
+    })
+  }
 }
 </script>
 

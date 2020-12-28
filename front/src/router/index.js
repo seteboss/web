@@ -78,7 +78,7 @@ const routes = [
     component: () => import('@/views/SavingProgress')
   },
   {
-    path: '/currentProgram',
+    path: '/currentProgram/:pId',
     name: 'CurrentProgram',
     meta: {
       layout: 'modalLayout'
