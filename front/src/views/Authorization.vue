@@ -1,7 +1,7 @@
 <template>
   <div>
     <form class="form-signin text-center" @submit.prevent="submitHandler">
-      <img class="" src="/front/src/img/logo.png" alt="" width="100" height="100">
+      <img class="" src="/img/logo.png" alt="" width="100" height="100">
       <h1 class="text-header">Авторизируетесь</h1>
       <div>
         <input id="email"

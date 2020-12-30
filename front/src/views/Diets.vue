@@ -8,20 +8,21 @@
     </div>
     <div class="row mb-2">
       <div class="col-md-6" v-for="item in items" v-bind:key="item">
-        <Card v-bind:card="item"></Card>
+        <CardDiets v-bind:card="item"></CardDiets>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Card from "@/components/CardDiets";
-// import bootstrap from '@/style/bootstrap.css'
-// import styles from '@/style/style.css'
+import CardDiets from "@/components/CardDiets";
+import bootstrap from '@/style/bootstrap.css'
+import styles from '@/style/style.css'
+import token from "@/user/token";
 // import url1 from "@/img/vegetables.png";
 // import url2 from "@/img/суп.png";
 export default {
-  components: {Card},
+  components: {CardDiets},
   bootstrap,
   styles,
   data(){
@@ -30,8 +31,7 @@ export default {
     }
   },
   created() {
-    const access_token = JSON.parse(localStorage.getItem('access_token'));
-
+    const access_token = token.accessToken
     this.$http.get('/api/v1/diets/all', {
       headers: {
         'Authorization': 'Bearer ' + access_token,

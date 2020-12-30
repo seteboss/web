@@ -86,7 +86,7 @@ const routes = [
     component: () => import('@/views/CurrentProgram')
   },
   {
-    path: '/currentDiet',
+    path: '/currentDiet/:dId',
     name: 'CurrentDiet',
     meta: {
       layout: 'modalLayout'

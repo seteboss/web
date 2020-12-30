@@ -4,7 +4,7 @@
       <h4 class="mb-0 p-4 text-main-color ">{{card.name}}</h4>
       <p class="card-text mb-auto pl-4 text-main-color">{{card.info}}</p>
 
-      <a v-on:click="$router.push({ name: 'CurrentDiet',params:{pId:card.id} })" class="stretched-link pl-4 text-main-color">Подробнее</a>
+      <a v-on:click="$router.push({ name: 'CurrentDiet',params:{dId:card.id} })" class="stretched-link pl-4 text-main-color">Подробнее</a>
     </div>
     <div class="col-auto d-none d-lg-block">
       <img class="" :src="card.previewUri" alt=""  width="250" height="251">
@@ -16,7 +16,7 @@
 
 
 export default {
-  name: "Card",
+  name: "CardDiets",
   props:{card:{
       previewUri:String
     }},
